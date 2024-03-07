@@ -183,5 +183,11 @@
         </plugins>
         <finalName>service</finalName>
     </build>
-
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub parent Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/roboter5123/parent</url>
+        </repository>
+    </distributionManagement>
 </project>
