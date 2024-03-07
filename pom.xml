@@ -17,15 +17,13 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
-	<dependencies>
-	</dependencies>
 	<build>
 		<finalName>parent</finalName>
 	</build>
 	<distributionManagement>
 		<repository>
 			<id>github</id>
-			<name>GitHub parent Apache Maven Packages</name>
+			<name>GitHub frameboter Apache Maven Packages</name>
 			<url>https://maven.pkg.github.com/frameboter/parent</url>
 		</repository>
 	</distributionManagement>
