@@ -16,6 +16,9 @@
     <description>parent</description>
     <properties>
         <java.version>21</java.version>
+        <frameboter.artifact.name>parent</frameboter.artifact.name>
+        <frameboter.service.project>frameboter</frameboter.service.project>
+        <frameboter.service.repo>parent</frameboter.service.repo>
     </properties>
     <dependencies>
         <dependency>
@@ -77,7 +80,7 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>parent</finalName>
+        <finalName>${frameboter.artifact.name}</finalName>
     </build>
     <distributionManagement>
         <repository>
@@ -123,13 +126,13 @@
             <distributionManagement>
                 <repository>
                     <id>gitea-deploy</id>
-                    <name>Gitea frameboter Maven Packages</name>
-                    <url>https://gitea.roboter5123.com/api/packages/frameboter/maven</url>
+                    <name>Gitea ${frameboter.service.project} Maven Packages</name>
+                    <url>https://gitea.roboter5123.com/api/packages/${frameboter.service.project}/maven</url>
                 </repository>
                 <snapshotRepository>
                     <id>gitea-deploy</id>
-                    <name>Gitea frameboter Maven Snapshots</name>
-                    <url>https://gitea.roboter5123.com/api/packages/frameboter/maven</url>
+                    <name>Gitea ${frameboter.service.project} Maven Snapshots</name>
+                    <url>https://gitea.roboter5123.com/api/packages/${frameboter.service.project}/maven</url>
                 </snapshotRepository>
             </distributionManagement>
         </profile>
@@ -139,13 +142,13 @@
             <distributionManagement>
                 <repository>
                     <id>github-deploy</id>
-                    <name>GitHub frameboter Apache Maven Packages</name>
-                    <url>https://maven.pkg.github.com/frameboter/parent</url>
+                    <name>GitHub ${frameboter.service.project} Apache Maven Packages</name>
+                    <url>https://maven.pkg.github.com/${frameboter.service.project}/${frameboter.service.repo}</url>
                 </repository>
                 <snapshotRepository>
                     <id>github-deploy</id>
-                    <name>GitHub frameboter Apache Maven Snapshots</name>
-                    <url>https://maven.pkg.github.com/frameboter/parent</url>
+                    <name>GitHub ${frameboter.service.project} Apache Maven Snapshots</name>
+                    <url>https://maven.pkg.github.com/${frameboter.service.project}/${frameboter.service.repo}</url>
                 </snapshotRepository>
             </distributionManagement>
         </profile>
