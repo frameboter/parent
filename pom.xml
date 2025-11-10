@@ -91,7 +91,7 @@
         <id>include-security</id>
         <activation>
             <file>
-                <exists>.include-security</exists>
+                <exists>security.marker</exists>
             </file>
         </activation>
         <dependencies>
