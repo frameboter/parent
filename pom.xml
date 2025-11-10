@@ -17,8 +17,8 @@
     <properties>
         <java.version>21</java.version>
         <frameboter.artifact.name>parent</frameboter.artifact.name>
-        <frameboter.service.project>frameboter</eos.service.project>
-        <frameboter.service.repo>parent</eos.service.name>
+        <frameboter.service.project>frameboter</frameboter.service.project>
+        <frameboter.service.repo>parent</frameboter.service.repo>
     </properties>
     <dependencies>
         <dependency>
