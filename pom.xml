@@ -93,35 +93,10 @@
                     </rules>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.openapitools</groupId>
-                <artifactId>openapi-generator-maven-plugin</artifactId>
-                <version>7.17.0</version>
-                <executions>
-                    <execution>
-                        <id>java-client-code-generation</id>
-                        <phase>integration-test</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <inputSpec>http://localhost:8080/api/api-docs</inputSpec>
-                            <output>${project.build.directory}/generated-sources/java</output>
-                            <generatorName>java</generatorName>
-                            <configOptions>
-                                <groupId>${groupId}</groupId>
-                                <artifactId>${artifactId}-client</artifactId>
-                                <artifactVersion>${version}</artifactVersion>
-                                <apiPackage>${groupId}.${artifactId}.client.rest.resource</apiPackage>
-                                <modelPackage>${groupId}.${artifactId}.rest.model</modelPackage>
-                            </configOptions>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
         <finalName>${frameboter.artifact.name}</finalName>
     </build>
+
     <distributionManagement>
         <repository>
             <id>github</id>
@@ -130,6 +105,57 @@
         </repository>
     </distributionManagement>
     <profiles>
+        <profile>
+            <id>build</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>pre-integration-test</id>
+                                <goals>
+                                    <goal>start</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>post-integration-test</id>
+                                <goals>
+                                    <goal>stop</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.openapitools</groupId>
+                        <artifactId>openapi-generator-maven-plugin</artifactId>
+                        <version>7.17.0</version>
+                        <executions>
+                            <execution>
+                                <id>java-client-code-generation</id>
+                                <phase>integration-test</phase>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+                                <configuration>
+                                    <inputSpec>http://localhost:8080/api/api-docs</inputSpec>
+                                    <output>${project.build.directory}/generated-sources/java</output>
+                                    <generatorName>java</generatorName>
+                                    <configOptions>
+                                        <groupId>${groupId}</groupId>
+                                        <artifactId>${artifactId}-client</artifactId>
+                                        <artifactVersion>${version}</artifactVersion>
+                                        <apiPackage>${groupId}.${artifactId}.client.rest.resource</apiPackage>
+                                        <modelPackage>${groupId}.${artifactId}.rest.model</modelPackage>
+                                    </configOptions>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
         <profile>
             <id>include-security</id>
             <activation>
