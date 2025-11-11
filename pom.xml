@@ -39,7 +39,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <skip>${project.packaging eq 'pom'}</skip>
+                    <skip>${isParent}</skip>
                 </configuration>
                 <executions>
                     <execution>
@@ -101,7 +101,7 @@
                 <artifactId>openapi-generator-maven-plugin</artifactId>
                 <version>7.17.0</version>
                 <configuration>
-                    <skip>${project.packaging eq 'pom'}</skip>
+                    <skip>${isParent}</skip>
                 </configuration>
                 <executions>
                     <execution>
@@ -137,6 +137,17 @@
         </repository>
     </distributionManagement>
     <profiles>
+        <profile>
+            <id>include-security</id>
+            <activation>
+                <file>
+                    <exists>parent.marker</exists>
+                </file>
+            </activation>
+            <properties>
+                <isParent>true</isParent>
+            </properties>
+        </profile>
         <profile>
             <id>include-security</id>
             <activation>
