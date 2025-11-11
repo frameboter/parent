@@ -138,7 +138,7 @@
     </distributionManagement>
     <profiles>
         <profile>
-            <id>include-security</id>
+            <id>parent</id>
             <activation>
                 <file>
                     <exists>parent.marker</exists>
