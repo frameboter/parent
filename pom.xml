@@ -32,14 +32,14 @@
             <version>0.1.0</version>
         </dependency>
     </dependencies>
-    
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <skip>${project.packaging.equals('pom')}</skip>
+                    <skip>${project.packaging eq 'pom'}</skip>
                 </configuration>
                 <executions>
                     <execution>
@@ -101,7 +101,7 @@
                 <artifactId>openapi-generator-maven-plugin</artifactId>
                 <version>7.17.0</version>
                 <configuration>
-                    <skip>${project.packaging.equals('pom')}</skip>
+                    <skip>${project.packaging eq 'pom'}</skip>
                 </configuration>
                 <executions>
                     <execution>
