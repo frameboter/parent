@@ -123,6 +123,7 @@
                                 <useRuntimeException>true</useRuntimeException>
                             </configOptions>
                             <additionalProperties>
+                                <useRuntimeException>true</useRuntimeException>
                                 <serverVariableBasePath>http://${frameboter.service.repo}:8080</serverVariableBasePath>
                             </additionalProperties>
                         </configuration>
