@@ -113,7 +113,7 @@
                         <configuration>
                             <inputSpec>http://localhost:8080/api/api-docs</inputSpec>
                             <output>${project.build.directory}/generated-sources/java</output>
-                            <generatorName>jersey2</generatorName>
+                            <generatorName>java</generatorName>
                             <configOptions>
                                 <groupId>${groupId}</groupId>
                                 <artifactId>${artifactId}-client</artifactId>
