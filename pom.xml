@@ -120,6 +120,7 @@
                                 <artifactVersion>${version}</artifactVersion>
                                 <apiPackage>${groupId}.${artifactId}.client.rest.resource</apiPackage>
                                 <modelPackage>${groupId}.${artifactId}.client.rest.model</modelPackage>
+                                <useRuntimeException>true</useRuntimeException>
                             </configOptions>
                             <additionalProperties>
                                 <serverVariableBasePath>http://${frameboter.service.repo}:8080</serverVariableBasePath>
