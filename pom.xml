@@ -119,7 +119,7 @@
                                 <artifactId>${artifactId}-client</artifactId>
                                 <artifactVersion>${version}</artifactVersion>
                                 <apiPackage>${groupId}.${artifactId}.client.rest.resource</apiPackage>
-                                <modelPackage>${groupId}.${artifactId}.rest.model</modelPackage>
+                                <modelPackage>${groupId}.${artifactId}.client.rest.model</modelPackage>
                             </configOptions>
                             <additionalProperties>
                                 <serverVariableBasePath>http://${frameboter.service.repo}:8080</serverVariableBasePath>
