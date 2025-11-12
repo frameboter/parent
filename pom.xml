@@ -121,6 +121,9 @@
                                 <apiPackage>${groupId}.${artifactId}.client.rest.resource</apiPackage>
                                 <modelPackage>${groupId}.${artifactId}.rest.model</modelPackage>
                             </configOptions>
+                            <additionalProperties>
+                                <serverVariableBasePath>http://${frameboter.service.repo}:8080</serverVariableBasePath>
+                            </additionalProperties>
                         </configuration>
                     </execution>
                 </executions>
